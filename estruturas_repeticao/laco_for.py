@@ -24,7 +24,7 @@ def somar_numero():
 
 def mostrar_numeros_pares():
     for numero in range(1,21):
-        if numero % 2 !== 0:
+        if numero % 2 != 0:
             print(f'numeros pares: {numero}')
 
 #mostrar_numero()
