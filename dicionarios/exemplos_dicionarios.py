@@ -1,5 +1,7 @@
 # anatomia do dicionario
 
+import json
+
 def exibir_alunos():
     alunos = {
         'nome': 'manu',
@@ -179,7 +181,7 @@ def criar_cadastro():
 
 # dicionario com listas
 def calcular_media(notas):
-    return sum(notas)
+    return sum(notas) / len(notas)
 
 
 def aluno_completo():
@@ -196,6 +198,28 @@ def aluno_completo():
         }
     }
     aluno['media'] = calcular_media(aluno['notas'])
-    print(aluno)
+    print(aluno["endereco"]["telefone"])
 
-aluno_completo()
+#aluno_completo()
+
+def cadastrar_dados_alunos():
+    aluno = {}
+
+    aluno['nome'] = input('informe o nome do aluno: ')
+    aluno['idade'] = int(input('informe a idade: '))
+    aluno['notas'] = []
+
+    for nota in range(4):
+        aluno['nota'].append(float(input(f'informe a nota {nota + 1}: ')))
+
+    aluno['endereco'] = {}
+    aluno['endereco']['cidade'] = input('digite a cidade: ')
+    aluno['endereco']['rua'] = input('digite a rua: ')
+    aluno['endereco']['numero'] = int(input('digite o numero da casa: '))
+    aluno['endereco']['telefone'] = input('digite o telefone com DDD: ')
+
+    aluno['media'] = calcular_media(aluno['notas'])
+    print('aluno cadastrado: ', json.dumps(aluno, indent=4))
+
+cadastrar_dados_alunos()
+
